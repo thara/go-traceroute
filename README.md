@@ -26,6 +26,10 @@ Usage: go-traceroute [OPTIONS] HOSTNAME
 
 NOTE: macOS requires root access to run it correctly.
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details
+
 ## Author
 
 Tomochika Hara ([thara](https://thara.dev))
