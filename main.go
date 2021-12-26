@@ -14,7 +14,7 @@ func main() {
 	}
 	hostname := os.Args[1]
 
-	err := run(hostname)
+	err := traceroute(hostname)
 	if err != nil {
 		log.Fatalf("%+v", err)
 	}

@@ -12,7 +12,7 @@ import (
 	"golang.org/x/net/ipv4"
 )
 
-func run(hostname string) error {
+func traceroute(hostname string) error {
 
 	port := 33434
 
