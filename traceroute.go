@@ -12,21 +12,15 @@ import (
 	"golang.org/x/net/ipv4"
 )
 
-func traceroute(hostname string) error {
-
-	port := 33434
-
+func traceroute(hostname string, port, firstTTL, maxTTL, retry int) error {
 	udpAddr, err := net.ResolveUDPAddr("udp4", fmt.Sprintf("%s:%d", hostname, port))
 	if err != nil {
 		return errors.WithStack(err)
 	}
 
-	fmt.Printf("traceroute to %s (%s)\n", hostname, udpAddr.IP.String())
+	fmt.Printf("traceroute to %s (%s), %d hops max\n", hostname, udpAddr.IP.String(), maxTTL)
 
 	curTTL := 1
-	maxTTL := 64
-
-	retry := 3
 
 	for {
 		fmt.Printf("%3d ", curTTL)
